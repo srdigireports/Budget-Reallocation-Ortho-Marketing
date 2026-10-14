@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Google &amp; Meta budget reallocation, October 2026</title>
+<meta name="description" content="Where Google and Meta money should sit across 63 active Ortho Marketing accounts, and why.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=STIX+Two+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<style>
+:root{
+  --paper:#F6F9FB; --grid:#DCE5EC; --grid-major:#CFDBE5; --ink:#0E2236; --ink2:#42566B; --rule:#C5D2DD;
+  --mg:#1F5A9E; --gm:#A8500F; --trim:#5B6572; --new:#8A6A12; --fix:#16223A; --hold:#9FADBB;
+  --acc:#0B7A75;
+  --serif:"STIX Two Text","Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 19px/1.62 var(--serif);position:relative;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(var(--grid-major) 1px,transparent 1px),linear-gradient(90deg,var(--grid-major) 1px,transparent 1px),
+    linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:144px 144px,144px 144px,24px 24px,24px 24px;
+  background-position:0 calc(var(--sy,0) * -.18px),0 0,0 calc(var(--sy,0) * -.18px),0 0;
+  opacity:.55;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 60%,rgba(0,0,0,.35) 100%);mask-image:linear-gradient(to bottom,#000 0,#000 60%,rgba(0,0,0,.35) 100%)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+#progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--acc);transform:scaleX(0);transform-origin:left;z-index:50}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 40px 40px;max-width:1240px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.byline{font:500 15px/1.4 var(--sans);color:var(--ink2);margin:0 0 18px;letter-spacing:.01em}
+h1{font:600 clamp(2.4rem,5.6vw,4.9rem)/1.06 var(--serif);letter-spacing:-.015em;margin:0;max-width:20ch}
+h1 .w{display:inline-block}
+.lede{font:400 clamp(1.15rem,2vw,1.5rem)/1.45 var(--serif);color:var(--ink2);max-width:36ch;margin:22px 0 0}
+.flow{margin:44px 0 0;width:100%}
+.flow .stage{position:relative;aspect-ratio:1000/340;width:100%}
+.flow svg,.flow canvas{position:absolute;inset:0;width:100%;height:100%}
+.flowkey{display:none;margin:14px 0 0;font:400 14px/1.4 var(--sans);color:var(--ink2);gap:6px 22px;flex-wrap:wrap}
+.flowkey span{display:inline-flex;align-items:baseline;gap:7px}
+.flowkey b{font:600 1.5rem/1 var(--serif);color:var(--c)}
+.flow .lab{position:absolute;left:50%;transform:translateX(-50%);text-align:center;font:400 14px/1.3 var(--sans);color:var(--ink2);white-space:nowrap}
+.flow .lab b{display:block;font:600 clamp(1.5rem,3.2vw,2.5rem)/1 var(--serif);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.flow .lab.top{top:25%} .flow .lab.top b{color:var(--mg)}
+.flow .lab.bot{bottom:25%} .flow .lab.bot b{color:var(--gm)}
+.flow figcaption{margin-top:16px;font:400 14px/1.45 var(--sans);color:var(--ink2);max-width:72ch}
+.cue{margin-top:64px;font:500 14px/1 var(--sans);color:var(--ink2);display:flex;align-items:center;gap:10px}
+.cue i{display:block;width:1px;height:38px;background:var(--ink2);transform-origin:top;animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+.js .hero h1 .w{opacity:0;transform:translateY(.45em);animation:wordIn .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.15s + var(--w) * .1s)}
+.js .hero .byline,.js .hero .lede{opacity:0;animation:fadeIn .9s ease forwards}
+.js .hero .byline{animation-delay:.05s} .js .hero .lede{animation-delay:.8s}
+.js .flow .arc{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.8s cubic-bezier(.5,0,.2,1) 1.1s forwards}
+.js .flow .node{opacity:0;animation:fadeIn .8s ease 1s forwards}
+.js .flow .lab{opacity:0;animation:fadeIn .8s ease 2s forwards}
+.js .flow canvas{opacity:0;animation:fadeIn 1.2s ease 2.2s forwards}
+.js .flow figcaption{opacity:0;animation:fadeIn .8s ease 2.6s forwards}
+@keyframes wordIn{to{opacity:1;transform:none}}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ---------- page grid ---------- */
+.wrap{display:grid;grid-template-columns:210px minmax(0,1fr);gap:48px;max-width:1360px;margin:0 auto;padding:0 40px}
+.rail{position:sticky;top:0;align-self:start;height:100vh;padding:92px 0 40px;font:500 14px/1.35 var(--sans)}
+.rail ol{list-style:none;margin:0;padding:0 0 0 18px;position:relative}
+.rail ol::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:2px;background:var(--rule)}
+.rail .fill{position:absolute;left:0;top:4px;bottom:4px;width:2px;background:var(--acc);transform:scaleY(0);transform-origin:top}
+.rail li{margin:0}
+.rail a{display:block;padding:7px 0;color:var(--ink2);text-decoration:none;transition:color .2s,transform .2s}
+.rail a:hover{color:var(--ink)}
+.rail a[aria-current="true"]{color:var(--ink);font-weight:600;transform:translateX(4px)}
+main{min-width:0;padding-bottom:140px}
+.part{padding:104px 0 8px;max-width:1040px;scroll-margin-top:0}
+h2{font:600 clamp(1.8rem,3.4vw,2.6rem)/1.15 var(--serif);letter-spacing:-.01em;margin:0;max-width:24ch;position:relative;padding-bottom:18px}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:3px;background:var(--acc);transform-origin:left}
+.js .part:not(.in) h2::after{transform:scaleX(0)} .js .part h2::after{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.standfirst{font:400 1.2rem/1.55 var(--serif);color:var(--ink2);max-width:60ch;margin:20px 0 0}
+p{margin:0 0 1em;max-width:66ch}
+.cap{font:400 15px/1.5 var(--sans);color:var(--ink2);max-width:72ch;margin:0 0 14px}
+.cap strong{color:var(--ink);font-weight:600}
+.note{font:400 14px/1.5 var(--sans);color:var(--ink2);max-width:80ch;margin:12px 0 0}
+
+/* ---------- Fig. 2 specimen grid ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 8px}
+.legend button{font:500 14px/1 var(--sans);color:var(--ink);background:#fff;border:1px solid var(--rule);padding:9px 14px 9px 12px;display:inline-flex;align-items:center;gap:9px;cursor:pointer;transition:border-color .2s,background .2s}
+.legend button i{width:12px;height:12px;background:var(--c);display:block}
+.legend button b{font-weight:600;font-variant-numeric:tabular-nums}
+.legend button:hover{border-color:var(--ink2)}
+.legend button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.legend button[aria-pressed="true"] i{outline:1.5px solid #fff;outline-offset:1px}
+.groups{display:grid;gap:34px;margin-top:28px}
+.grp h3{font:600 1.05rem/1.2 var(--serif);margin:0 0 12px;display:flex;align-items:baseline;gap:10px}
+.grp h3 small{font:400 14px var(--sans);color:var(--ink2)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:8px;list-style:none;margin:0;padding:0}
+.tile{position:relative;min-height:104px;background:#fff;border:1px solid var(--rule);padding:8px 10px 15px;display:flex;flex-direction:column;gap:3px;overflow:hidden;transition:opacity .3s,filter .3s}
+.tile::before{content:"";position:absolute;inset:0;background:var(--c);opacity:.07;pointer-events:none}
+.tile .bar{position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--c)}
+.tile .ix{font:500 11px/1 var(--sans);color:var(--ink2);font-variant-numeric:tabular-nums}
+.tile .sym{font:600 27px/1 var(--serif);color:var(--ink)}
+.tile .nm{font:500 13px/1.25 var(--sans);color:var(--ink)}
+.tile .dc{font:400 12px/1.2 var(--sans);color:var(--ink2);margin-top:auto}
+.tile.dim{opacity:.15;filter:grayscale(1)}
+.js .tile::before{opacity:0;transition:opacity .9s ease var(--d)} .js .tile .bar{background:#DCE4EB;transition:background .9s ease var(--d)}
+.js .tiles.in .tile::before{opacity:.07} .js .tiles.in .tile .bar{background:var(--c)}
+
+/* ---------- summary ---------- */
+.abstract{font:400 1.3rem/1.6 var(--serif);max-width:58ch;margin:30px 0 0}
+.readouts{display:grid;grid-template-columns:repeat(3,1fr);margin:40px 0 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}
+.readout{padding:24px 26px 26px 0}
+.readout+.readout{padding-left:26px;border-left:1px solid var(--rule)}
+.readout .num{display:block;font:600 clamp(2.4rem,4.6vw,3.6rem)/1 var(--serif);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.readout .t{font:600 15px/1.35 var(--sans);margin:12px 0 4px}
+.readout .d{font:400 14px/1.5 var(--sans);color:var(--ink2);margin:0}
+.r1 .num{color:var(--mg)} .r2 .num{color:var(--trim)} .r3 .num{color:var(--new)}
+
+/* ---------- method ---------- */
+dl.measures{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px;margin:34px 0 0;border-top:2px solid var(--ink)}
+dl.measures>div{padding:16px 0;border-bottom:1px solid var(--rule)}
+dl.measures dt{font:600 1.05rem/1.3 var(--serif);margin:0 0 4px}
+dl.measures dd{font:400 15px/1.5 var(--sans);color:var(--ink2);margin:0}
+.rules{margin:34px 0 0;max-width:68ch}
+.rules h3{font:600 1.15rem/1.3 var(--serif);margin:0 0 10px}
+.rules ul{margin:0;padding:0;list-style:none}
+.rules li{position:relative;padding:0 0 10px 26px;font:400 1.05rem/1.55 var(--serif)}
+.rules li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;height:10px;border:2px solid var(--acc);border-radius:50%}
+
+/* ---------- tables ---------- */
+.tbl{margin:32px 0 0}
+.tbl .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font:400 15px/1.5 var(--sans);font-variant-numeric:tabular-nums;min-width:640px}
+thead th{font:600 13.5px/1.3 var(--sans);text-align:left;padding:10px 16px 9px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);vertical-align:bottom}
+tbody td{padding:13px 16px 13px 0;vertical-align:top;border-bottom:1px solid var(--grid-major)}
+tbody tr:last-child td{border-bottom:2px solid var(--ink)}
+tbody tr:hover td{background:rgba(11,122,117,.06)}
+td.acct{font-weight:600}
+td.mv{font-weight:600;white-space:nowrap}
+.mv-mg{color:var(--mg)} .mv-gm{color:var(--gm)} .mv-trim{color:var(--trim)} .mv-new{color:var(--new)}
+td.num,th.num{text-align:right;padding-right:22px} 
+tr.tot td{font-weight:600;background:rgba(14,34,54,.04)}
+.ev{white-space:nowrap}
+.ev::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;vertical-align:-1px;border:1.6px solid var(--ink)}
+.ev-b::before{background:var(--ink)} .ev-a::before{background:transparent}
+.ev-p::before{background:linear-gradient(90deg,var(--ink) 50%,transparent 50%)}
+.key{display:flex;flex-wrap:wrap;gap:6px 22px;font:400 14px/1.4 var(--sans);color:var(--ink2);margin:12px 0 0}
+.key span{white-space:nowrap}
+.js .tbl tbody tr{opacity:0;transform:translateY(8px);transition:opacity .55s ease,transform .55s ease;transition-delay:calc(var(--i) * 70ms)}
+.js .tbl.in tbody tr{opacity:1;transform:none}
+
+/* coverage mini bars */
+.split{display:flex;height:12px;min-width:140px;background:transparent}
+.split i{display:block;height:100%}
+.split .a{background:var(--ink);transform-origin:left} .split .b{background:transparent;border:1.6px solid var(--ink);border-left:0;transform-origin:left}
+.js .split i{transform:scaleX(0);transition:transform 1s cubic-bezier(.2,.7,.2,1) .3s} .js .tbl.in .split i{transform:scaleX(1)}
+.notes{margin:30px 0 0;max-width:68ch;padding:0;list-style:none}
+.notes li{padding:0 0 10px 22px;position:relative;font:400 1.02rem/1.55 var(--serif)}
+.notes li::before{content:"";position:absolute;left:2px;top:.7em;width:8px;height:2px;background:var(--ink2)}
+
+/* ---------- Fig. 3 stacked bar ---------- */
+.stack{display:flex;gap:3px;margin:28px 0 0}
+.seg{flex:var(--f) 1 0;min-width:0;height:68px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font:600 22px var(--sans);transform-origin:left}
+.seg.dk{color:var(--ink)}
+.js .seg{transform:scaleX(0);transition:transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i) * 130ms)} .js .stack.in .seg{transform:scaleX(1)}
+.ruler{display:flex;justify-content:space-between;font:400 13px/1 var(--sans);color:var(--ink2);margin:8px 0 0;padding-top:6px;border-top:1px solid var(--ink2)}
+dl.groupdefs{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 30px;margin:34px 0 0}
+dl.groupdefs>div{border-left:4px solid var(--c);padding:2px 0 2px 14px}
+dl.groupdefs dt{font:600 1.02rem/1.3 var(--serif);margin:0 0 3px}
+dl.groupdefs dd{font:400 14.5px/1.5 var(--sans);color:var(--ink2);margin:0}
+
+/* ---------- fix first ---------- */
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px;margin:34px 0 0;border-top:2px solid var(--ink)}
+.cols3>div{padding:16px 0 4px}
+.cols3 h3{font:600 1.1rem/1.3 var(--serif);margin:0 0 12px}
+.cols3 h3 small{font:400 14px var(--sans);color:var(--ink2);margin-left:6px}
+.cols3 ul{list-style:none;margin:0;padding:0}
+.cols3 li{font:400 15px/1.5 var(--sans);padding:0 0 12px;color:var(--ink2)}
+.cols3 li b{display:block;color:var(--ink);font-weight:600}
+.js .cols3>div{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease;transition-delay:calc(var(--i) * 120ms)} .js .cols3.in>div{opacity:1;transform:none}
+
+footer{max-width:1040px;border-top:2px solid var(--ink);margin-top:110px;padding-top:14px;font:400 14px/1.5 var(--sans);color:var(--ink2)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){.wrap{grid-template-columns:1fr;padding:0 24px}.rail{display:none}.hero{padding:56px 24px 32px}}
+@media (max-width:760px){
+  body{font-size:17px}
+  .readouts{grid-template-columns:1fr}.readout+.readout{padding-left:0;border-left:0;border-top:1px solid var(--rule)}
+  dl.measures,.cols3,dl.groupdefs{grid-template-columns:1fr}
+  .flow .lab{display:none}.flowkey{display:flex}
+  .cue{margin-top:40px}
+  .seg{font-size:15px;height:52px}
+  .tiles{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .hero h1 .w,.js .hero .byline,.js .hero .lede,.js .flow .node,.js .flow .lab,.js .flow canvas,.js .flow figcaption{opacity:1!important;transform:none!important}
+  .js .flow .arc{stroke-dashoffset:0!important}
+  .js .tbl tbody tr,.js .cols3>div{opacity:1!important;transform:none!important}
+  .js .seg,.js .split i{transform:none!important}
+  .js .tile::before{opacity:.07!important}.js .tile .bar{background:var(--c)!important}
+  .js .part h2::after{transform:none!important}
+}
+@media print{
+  #progress,.rail,.cue,.legend{display:none!important}
+  body::before{display:none}
+  .wrap{display:block;padding:0}.hero{min-height:auto}.part{padding-top:40px;break-inside:avoid-page}
+  .js .tbl tbody tr,.js .cols3>div{opacity:1!important;transform:none!important}
+}
+
+</style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+<header class="hero" id="top">
+  <p class="byline">Ortho Marketing, October 2026</p>
+  <h1><span class="w" style="--w:0">Google</span> <span class="w" style="--w:1">&amp;</span> <span class="w" style="--w:2">Meta</span> <span class="w" style="--w:3">budget</span> <span class="w" style="--w:4">reallocation</span> </h1>
+  <p class="lede">Where Google and Meta money should sit across 63 active accounts, and why</p>
+  <figure class="flow" style="margin-left:0;margin-right:0">
+    <div class="stage">
+    <svg viewBox="0 0 1000 340" role="img" aria-label="Diagram: $2,850 a month moves from Meta to Google and $1,200 a month moves from Google to Meta">
+      <defs>
+        <marker id="aB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9z" fill="#1F5A9E"/></marker>
+        <marker id="aO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9z" fill="#A8500F"/></marker>
+      </defs>
+      <path class="arc" pathLength="1" d="M134 150 Q500 -40 866 150" fill="none" stroke="#1F5A9E" stroke-opacity=".45" stroke-width="1.4" marker-end="url(#aB)"/>
+      <path class="arc" pathLength="1" d="M866 190 Q500 380 134 190" fill="none" stroke="#A8500F" stroke-opacity=".45" stroke-width="1.4" marker-end="url(#aO)"/>
+      <g class="node"><circle cx="90" cy="170" r="44" fill="#F6F9FB" stroke="#0E2236" stroke-width="1.6"/><circle cx="90" cy="170" r="36" fill="none" stroke="#0E2236" stroke-opacity=".25"/>
+        <text x="90" y="177" text-anchor="middle" font-family="STIX Two Text, Georgia, serif" font-size="21" font-weight="600" fill="#0E2236">Meta</text></g>
+      <g class="node"><circle cx="910" cy="170" r="44" fill="#F6F9FB" stroke="#0E2236" stroke-width="1.6"/><circle cx="910" cy="170" r="36" fill="none" stroke="#0E2236" stroke-opacity=".25"/>
+        <text x="910" y="177" text-anchor="middle" font-family="STIX Two Text, Georgia, serif" font-size="21" font-weight="600" fill="#0E2236">Google</text></g>
+    </svg>
+    <canvas id="flowCv" aria-hidden="true"></canvas>
+    <div class="lab top"><b><span class="num" data-to="2850" data-pre="$">$2,850</span></b>a month, Meta → Google</div>
+    <div class="lab bot"><b><span class="num" data-to="1200" data-pre="$">$1,200</span></b>a month, Google → Meta</div>
+    </div>
+    <p class="flowkey"><span style="--c:#1F5A9E"><b>$2,850</b> a month, Meta → Google</span><span style="--c:#A8500F"><b>$1,200</b> a month, Google → Meta</span></p>
+    <figcaption><strong>Fig. 1.</strong> Monthly budget moved between platforms. Each dot stands for $50, so dot density shows the size of each flow.</figcaption>
+  </figure>
+  <div class="cue" aria-hidden="true"><i></i>Scroll</div>
+</header>
+
+<div class="wrap">
+<nav class="rail" aria-label="Sections"><ol><span class="fill"></span><li><a href="#accounts">Accounts at a glance</a></li><li><a href="#summary">Summary</a></li><li><a href="#method">Method</a></li><li><a href="#coverage">Data coverage</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#m2g">Meta → Google</a></li><li><a href="#g2m">Google → Meta</a></li><li><a href="#trim">Trims</a></li><li><a href="#fix">Fix first</a></li><li><a href="#hold">Hold</a></li><li><a href="#new">New money</a></li><li><a href="#expect">What we expect</a></li></ol></nav>
+<main>
+
+<section class="part" id="accounts">
+  <h2>All 63 accounts at a glance</h2>
+  <p class="standfirst">Each account sits in exactly one decision group. Select a decision to isolate it.</p>
+  <div class="legend" role="group" aria-label="Filter accounts by decision"><button type="button" data-k="mg" aria-pressed="false" style="--c:#1F5A9E"><i></i>Meta → Google <b>10</b></button><button type="button" data-k="gm" aria-pressed="false" style="--c:#A8500F"><i></i>Google → Meta <b>4</b></button><button type="button" data-k="trim" aria-pressed="false" style="--c:#5B6572"><i></i>Trim <b>3</b></button><button type="button" data-k="new" aria-pressed="false" style="--c:#8A6A12"><i></i>New money <b>8</b></button><button type="button" data-k="fix" aria-pressed="false" style="--c:#16223A"><i></i>Fix first <b>12</b></button><button type="button" data-k="hold" aria-pressed="false" style="--c:#9FADBB"><i></i>Hold <b>26</b></button></div>
+  <figure style="margin:0"><div class="groups"><div class="grp"><h3>Malik<small>17 accounts</small></h3><ol class="tiles"><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:0.00s" title="Sabinsky: Meta → Google"><span class="ix">1</span><span class="sym">Sa</span><span class="nm">Sabinsky</span><span class="dc">$300 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:0.04s" title="Eagle Rock: Meta → Google"><span class="ix">2</span><span class="sym">Er</span><span class="nm">Eagle Rock*</span><span class="dc">$600 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="gm" style="--c:#A8500F;--d:0.09s" title="Walton: Google → Meta"><span class="ix">3</span><span class="sym">Wa</span><span class="nm">Walton</span><span class="dc">$300 to Meta</span><span class="sr">, decision: Google → Meta</span><i class="bar"></i></li><li class="tile" data-k="new" style="--c:#8A6A12;--d:0.14s" title="Goldkind: New money"><span class="ix">4</span><span class="sym">Go</span><span class="nm">Goldkind</span><span class="dc">+$460 requested</span><span class="sr">, decision: New money</span><i class="bar"></i></li><li class="tile" data-k="new" style="--c:#8A6A12;--d:0.18s" title="Carvalho &amp; Roth: New money"><span class="ix">5</span><span class="sym">Cr</span><span class="nm">Carvalho &amp; Roth</span><span class="dc">+$400 requested</span><span class="sr">, decision: New money</span><i class="bar"></i></li><li class="tile" data-k="new" style="--c:#8A6A12;--d:0.22s" title="Hudson Valley: New money"><span class="ix">6</span><span class="sym">Hv</span><span class="nm">Hudson Valley</span><span class="dc">+$570 requested</span><span class="sr">, decision: New money</span><i class="bar"></i></li><li class="tile" data-k="new" style="--c:#8A6A12;--d:0.27s" title="Elite Refrigeration: New money"><span class="ix">7</span><span class="sym">El</span><span class="nm">Elite Refrigeration</span><span class="dc">+$610 requested</span><span class="sr">, decision: New money</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:0.32s" title="Crown: Fix first"><span class="ix">8</span><span class="sym">Co</span><span class="nm">Crown</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:0.36s" title="Cartier: Fix first"><span class="ix">9</span><span class="sym">Ca</span><span class="nm">Cartier</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:0.40s" title="Ortho Mike: Fix first"><span class="ix">10</span><span class="sym">Om</span><span class="nm">Ortho Mike</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:0.45s" title="South Florida: Fix first"><span class="ix">11</span><span class="sym">Sf</span><span class="nm">South Florida</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:0.49s" title="Killingly: Hold"><span class="ix">12</span><span class="sym">Ki</span><span class="nm">Killingly</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:0.54s" title="Holt: Hold"><span class="ix">13</span><span class="sym">Ho</span><span class="nm">Holt</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:0.58s" title="Goodman: Hold"><span class="ix">14</span><span class="sym">Gd</span><span class="nm">Goodman</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:0.63s" title="Green Valley: Hold"><span class="ix">15</span><span class="sym">Gv</span><span class="nm">Green Valley</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:0.67s" title="Webb Pediatric: Hold"><span class="ix">16</span><span class="sym">Wp</span><span class="nm">Webb Pediatric</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:0.72s" title="Auburn: Hold"><span class="ix">17</span><span class="sym">Au</span><span class="nm">Auburn</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li></ol></div><div class="grp"><h3>Ankit<small>25 accounts</small></h3><ol class="tiles"><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:0.77s" title="Dahar: Meta → Google"><span class="ix">18</span><span class="sym">Da</span><span class="nm">Dahar</span><span class="dc">$150 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:0.81s" title="Farrow: Meta → Google"><span class="ix">19</span><span class="sym">Fa</span><span class="nm">Farrow</span><span class="dc">$150 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:0.85s" title="Northeastern Braces: Meta → Google"><span class="ix">20</span><span class="sym">Nb</span><span class="nm">Northeastern Braces</span><span class="dc">$200 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:0.90s" title="Spring Hill Smiles: Meta → Google"><span class="ix">21</span><span class="sym">Sh</span><span class="nm">Spring Hill Smiles</span><span class="dc">$300 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:0.94s" title="WOW Monterey: Meta → Google"><span class="ix">22</span><span class="sym">Wm</span><span class="nm">WOW Monterey</span><span class="dc">$350 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:0.99s" title="WOW Watsonville: Meta → Google"><span class="ix">23</span><span class="sym">Ww</span><span class="nm">WOW Watsonville</span><span class="dc">$300 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:1.03s" title="Super Kiddos: Meta → Google"><span class="ix">24</span><span class="sym">Sk</span><span class="nm">Super Kiddos</span><span class="dc">$200 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="gm" style="--c:#A8500F;--d:1.08s" title="Smile Solutions Orthodontics: Google → Meta"><span class="ix">25</span><span class="sym">Ss</span><span class="nm">Smile Solutions Orthodontics</span><span class="dc">$300 to Meta</span><span class="sr">, decision: Google → Meta</span><i class="bar"></i></li><li class="tile" data-k="gm" style="--c:#A8500F;--d:1.12s" title="WOW Ukiah: Google → Meta"><span class="ix">26</span><span class="sym">Wu</span><span class="nm">WOW Ukiah</span><span class="dc">$300 to Meta</span><span class="sr">, decision: Google → Meta</span><i class="bar"></i></li><li class="tile" data-k="trim" style="--c:#5B6572;--d:1.17s" title="WOW Santa Rosa: Trim"><span class="ix">27</span><span class="sym">Ws</span><span class="nm">WOW Santa Rosa</span><span class="dc">Meta −$400</span><span class="sr">, decision: Trim</span><i class="bar"></i></li><li class="tile" data-k="trim" style="--c:#5B6572;--d:1.21s" title="Bernstein Windsor: Trim"><span class="ix">28</span><span class="sym">Bw</span><span class="nm">Bernstein Windsor</span><span class="dc">−$200 net</span><span class="sr">, decision: Trim</span><i class="bar"></i></li><li class="tile" data-k="trim" style="--c:#5B6572;--d:1.26s" title="WOW Napa: Trim"><span class="ix">29</span><span class="sym">Wn</span><span class="nm">WOW Napa</span><span class="dc">−$250 net</span><span class="sr">, decision: Trim</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:1.30s" title="Bernstein Santa Rosa: Fix first"><span class="ix">30</span><span class="sym">Bs</span><span class="nm">Bernstein Santa Rosa</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:1.35s" title="OESmiles: Fix first"><span class="ix">31</span><span class="sym">Oe</span><span class="nm">OESmiles</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:1.40s" title="Wisdom Tooth Central: Fix first"><span class="ix">32</span><span class="sym">Wt</span><span class="nm">Wisdom Tooth Central</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.44s" title="Hilton Diminick Ortho: Hold"><span class="ix">33</span><span class="sym">Hd</span><span class="nm">Hilton Diminick Ortho</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.48s" title="Innova Dental Care: Hold"><span class="ix">34</span><span class="sym">Id</span><span class="nm">Innova Dental Care</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.53s" title="Sterling Orthodontics: Hold"><span class="ix">35</span><span class="sym">So</span><span class="nm">Sterling Orthodontics</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.57s" title="Phoenixville Dental: Hold"><span class="ix">36</span><span class="sym">Pd</span><span class="nm">Phoenixville Dental</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.62s" title="WOW Pittsburg: Hold"><span class="ix">37</span><span class="sym">Wi</span><span class="nm">WOW Pittsburg</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.67s" title="WOW Salinas: Hold"><span class="ix">38</span><span class="sym">Wl</span><span class="nm">WOW Salinas</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.71s" title="WOW Vallejo: Hold"><span class="ix">39</span><span class="sym">Wv</span><span class="nm">WOW Vallejo</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.75s" title="WOW Soledad: Hold"><span class="ix">40</span><span class="sym">Wo</span><span class="nm">WOW Soledad</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.80s" title="Smiles By Lorino: Hold"><span class="ix">41</span><span class="sym">Sl</span><span class="nm">Smiles By Lorino</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:1.84s" title="West Windsor: Hold"><span class="ix">42</span><span class="sym">We</span><span class="nm">West Windsor</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li></ol></div><div class="grp"><h3>Kapil<small>21 accounts</small></h3><ol class="tiles"><li class="tile" data-k="mg" style="--c:#1F5A9E;--d:1.89s" title="Ortho Excellence: Meta → Google"><span class="ix">43</span><span class="sym">Or</span><span class="nm">Ortho Excellence</span><span class="dc">$300 to Google</span><span class="sr">, decision: Meta → Google</span><i class="bar"></i></li><li class="tile" data-k="gm" style="--c:#A8500F;--d:1.93s" title="Egger: Google → Meta"><span class="ix">44</span><span class="sym">Eg</span><span class="nm">Egger</span><span class="dc">$300 to Meta</span><span class="sr">, decision: Google → Meta</span><i class="bar"></i></li><li class="tile" data-k="new" style="--c:#8A6A12;--d:1.98s" title="Halabi: New money"><span class="ix">45</span><span class="sym">Ha</span><span class="nm">Halabi</span><span class="dc">+$500 requested</span><span class="sr">, decision: New money</span><i class="bar"></i></li><li class="tile" data-k="new" style="--c:#8A6A12;--d:2.02s" title="Hanson Place: New money"><span class="ix">46</span><span class="sym">Hp</span><span class="nm">Hanson Place</span><span class="dc">+$500 requested</span><span class="sr">, decision: New money</span><i class="bar"></i></li><li class="tile" data-k="new" style="--c:#8A6A12;--d:2.07s" title="Palo Alto: New money"><span class="ix">47</span><span class="sym">Pa</span><span class="nm">Palo Alto</span><span class="dc">+$500 requested</span><span class="sr">, decision: New money</span><i class="bar"></i></li><li class="tile" data-k="new" style="--c:#8A6A12;--d:2.11s" title="Dentistry at Marysville: New money"><span class="ix">48</span><span class="sym">Dm</span><span class="nm">Dentistry at Marysville</span><span class="dc">+$500 requested</span><span class="sr">, decision: New money</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:2.16s" title="Carroll: Fix first"><span class="ix">49</span><span class="sym">Cl</span><span class="nm">Carroll</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:2.21s" title="ARK Esthetics: Fix first"><span class="ix">50</span><span class="sym">Ae</span><span class="nm">ARK Esthetics</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:2.25s" title="Smiles: Fix first"><span class="ix">51</span><span class="sym">Sm</span><span class="nm">Smiles</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:2.29s" title="Dentistry at Renton: Fix first"><span class="ix">52</span><span class="sym">Dr</span><span class="nm">Dentistry at Renton</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="fix" style="--c:#16223A;--d:2.34s" title="House of Orthodontia: Fix first"><span class="ix">53</span><span class="sym">Hu</span><span class="nm">House of Orthodontia</span><span class="dc">Fix first</span><span class="sr">, decision: Fix first</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.38s" title="Unbraced: Hold"><span class="ix">54</span><span class="sym">Un</span><span class="nm">Unbraced</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.43s" title="Pacific Northwest Ortho: Hold"><span class="ix">55</span><span class="sym">Pn</span><span class="nm">Pacific Northwest Ortho</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.48s" title="Palm Coast Ortho: Hold"><span class="ix">56</span><span class="sym">Pc</span><span class="nm">Palm Coast Ortho</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.52s" title="Dentistry at Bonney Lake: Hold"><span class="ix">57</span><span class="sym">Db</span><span class="nm">Dentistry at Bonney Lake</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.56s" title="Invisbraces (Nikaeen): Hold"><span class="ix">58</span><span class="sym">In</span><span class="nm">Invisbraces (Nikaeen)</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.61s" title="OrthoDental Inc. (Gallup): Hold"><span class="ix">59</span><span class="sym">Og</span><span class="nm">OrthoDental Inc. (Gallup)</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.65s" title="Ortho Inc. (5 locations): Hold"><span class="ix">60</span><span class="sym">Ot</span><span class="nm">Ortho Inc. (5 locations)</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.70s" title="Dr. E: Hold"><span class="ix">61</span><span class="sym">De</span><span class="nm">Dr. E</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.75s" title="Monmouth Ocean: Hold"><span class="ix">62</span><span class="sym">Mo</span><span class="nm">Monmouth Ocean</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li><li class="tile" data-k="hold" style="--c:#9FADBB;--d:2.79s" title="Princeton Ortho: Hold"><span class="ix">63</span><span class="sym">Po</span><span class="nm">Princeton Ortho</span><span class="dc">Hold</span><span class="sr">, decision: Hold</span><i class="bar"></i></li></ol></div></div>
+  <p class="note"><strong>Fig. 2.</strong> Account tiles by manager. * Eagle Rock also requests $1,220 of new money (see Table 7). Amounts and reasons for each account follow in the tables below.</p></figure>
+</section>
+
+<section class="part" id="summary">
+  <h2>Reallocate $4,050 across 14 accounts and decide new money separately</h2>
+  <p class="abstract">38 of 63 accounts do not change: 12 fix first and 26 hold. Moves and trims lower budgets by $1,975 on paper ($850 in practice); approving every request would raise the total by about $3,300 a month.</p>
+  <div class="readouts">
+    <div class="readout r1"><span class="num" data-to="4050" data-pre="$">$4,050</span><p class="t">moves between platforms</p><p class="d">14 accounts: $2,850 Meta → Google, $1,200 Google → Meta</p></div>
+    <div class="readout r2"><span class="num" data-to="850" data-pre="$">$850</span><p class="t">released by 3 trims</p><p class="d">WOW Santa Rosa, Bernstein Windsor and WOW Napa; nothing is added back</p></div>
+    <div class="readout r3"><span class="num" data-to="5260" data-pre="$">$5,260</span><p class="t">new money requested</p><p class="d">9 accounts; a separate decision, not part of the reallocation</p></div>
+  </div>
+</section>
+
+<section class="part" id="method">
+  <h2>How we decided</h2>
+  <dl class="measures">
+    <div><dt>Cost per lead</dt><dd>Ad spend ÷ the leads the platform reports (calls and forms). Google leads exclude brand search.</dd></div>
+    <div><dt>Searches missed for budget</dt><dd>Google's own figure. High means more budget would show the ads more often.</dd></div>
+    <div><dt>Booked consults</dt><dd>Leads that reached a booked stage in SmileHub: the best sign of real patients.</dd></div>
+    <div><dt>Cost per booked consult</dt><dd>Ad spend ÷ booked consults. When money moves, it goes to the cheaper platform.</dd></div>
+  </dl>
+  <div class="rules"><h3>Rules we apply everywhere</h3><ul>
+    <li>Money moves to the platform with the cheaper booked consult, when the gap is clear and it can use more budget.</li>
+    <li>With no booking data we decide on cost per lead, searches missed for budget and Meta frequency, and say so.</li>
+    <li>Lead follow-up and disapproved ads are fixed before money is added.</li>
+    <li>Every move is checked after 30 days on cost per booked consult, and rolled back if it misses.</li>
+  </ul><p class="note">Paid ad calls count as Google; Facebook leads count as Meta.</p></div>
+</section>
+
+<section class="part" id="coverage">
+  <h2>Booking data covers 37 of 63 accounts</h2>
+  <figure class="tbl " style="margin-left:0;margin-right:0"><p class="cap"><strong>Table 1.</strong> Accounts with SmileHub booking data, by manager.</p><div class="scroll"><table><colgroup><col style="width:26%"><col style="width:15%"><col style="width:17%"><col style="width:17%"><col style="width:25%"></colgroup><thead><tr><th>Account group</th><th class="num">Accounts</th><th class="num">Booking data</th><th class="num">Ad data only</th><th>Split</th></tr></thead><tbody><tr style="--i:0"><td class="acct">Malik</td><td class="num">17</td><td class="num">10</td><td class="num">7</td><td><div class="split" aria-hidden="true"><i class="a" style="width:58.8%"></i><i class="b" style="width:41.2%"></i></div></td></tr><tr style="--i:1"><td class="acct">Ankit</td><td class="num">25</td><td class="num">16</td><td class="num">9</td><td><div class="split" aria-hidden="true"><i class="a" style="width:64.0%"></i><i class="b" style="width:36.0%"></i></div></td></tr><tr style="--i:2"><td class="acct">Kapil</td><td class="num">21</td><td class="num">11</td><td class="num">10</td><td><div class="split" aria-hidden="true"><i class="a" style="width:52.4%"></i><i class="b" style="width:47.6%"></i></div></td></tr><tr class="tot" style="--i:3"><td class="acct">Total</td><td class="num">63</td><td class="num">37</td><td class="num">26</td><td><div class="split" aria-hidden="true"><i class="a" style="width:58.7%"></i><i class="b" style="width:41.3%"></i></div></td></tr></tbody></table></div><p class="note">Booking data = SmileHub opportunities with booked stages. Filled bar: booking data; open bar: ad data only. Ankit's group includes accounts with new-lead stages only, counted as ad data only.</p></figure>
+  <ul class="notes">
+    <li>Booked counts are a floor: many leads were never worked (Carroll 108 of 176, Smiles 61 of 112).</li>
+    <li>435 bulk-imported records were removed from Kapil's accounts so they don't flatter cost per booked.</li>
+    <li>The 26 accounts without booking data are judged on Google and Meta data only, and labelled that way.</li>
+  </ul>
+</section>
+
+<section class="part" id="portfolio">
+  <h2>What happens to each of the 63 accounts</h2>
+  <figure style="margin:30px 0 0"><div class="stack" role="img" aria-label="63 accounts: Meta → Google 10, Google → Meta 4, Trim 3, New money 8, Fix first 12, Hold 26"><div class="seg" style="--f:10;--c:#1F5A9E;--i:0" title="Meta → Google: 10 accounts">10</div><div class="seg" style="--f:4;--c:#A8500F;--i:1" title="Google → Meta: 4 accounts">4</div><div class="seg" style="--f:3;--c:#5B6572;--i:2" title="Trim: 3 accounts">3</div><div class="seg" style="--f:8;--c:#8A6A12;--i:3" title="New money: 8 accounts">8</div><div class="seg" style="--f:12;--c:#16223A;--i:4" title="Fix first: 12 accounts">12</div><div class="seg dk" style="--f:26;--c:#9FADBB;--i:5" title="Hold: 26 accounts">26</div></div>
+  <div class="ruler" aria-hidden="true"><span>0</span><span>63 accounts</span></div>
+  <p class="note"><strong>Fig. 3.</strong> Accounts by decision. Malik 17 accounts, Ankit 25, Kapil 21; each account appears once.</p></figure>
+  <dl class="groupdefs"><div style="--c:#1F5A9E"><dt>Meta → Google, 10</dt><dd>$2,850 a month moves to Google, where consults book for less.</dd></div><div style="--c:#A8500F"><dt>Google → Meta, 4</dt><dd>$1,200 a month moves to Meta, where consults book for less.</dd></div><div style="--c:#5B6572"><dt>Trim, 3</dt><dd>$850 a month released from platforms that stopped producing.</dd></div><div style="--c:#8A6A12"><dt>New money, 8</dt><dd>+$4,040 requested, plus $1,220 more for Eagle Rock.</dd></div><div style="--c:#16223A"><dt>Fix first, 12</dt><dd>Lead follow-up, ads or a closer look at the data come before any money.</dd></div><div style="--c:#9FADBB"><dt>Hold, 26</dt><dd>Working, too early to judge, or budget is not the problem.</dd></div></dl>
+</section>
+
+<section class="part" id="m2g">
+  <h2>Meta → Google: $2,850 across ten accounts</h2>
+  <p class="standfirst">Five of these ten rest on booked consults. Four rest on ad data only and one on partial data, so each gets a 30-day check.</p>
+  <figure class="tbl " style="margin-left:0;margin-right:0"><p class="cap"><strong>Table 2.</strong> Budget moved from Meta to Google, by account.</p><div class="scroll"><table><colgroup><col style="width:17%"><col style="width:10%"><col style="width:57%"><col style="width:16%"></colgroup><thead><tr><th>Account</th><th>Moves</th><th>Why</th><th>Evidence</th></tr></thead><tbody><tr style="--i:0"><td class="acct">Sabinsky</td><td class="mv mv-mg">$300</td><td>Google books at $522 vs $1,012 on Meta (2 of 38 Meta leads booked); Meta prospecting brought 0 leads in Aug–Sep.</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:1"><td class="acct">Eagle Rock</td><td class="mv mv-mg">$600</td><td>Meta cost per lead rose $29 → $44 → $152; Google missed 60% for budget. No booking data. $1,220 more is a separate request.</td><td class="ev ev-a">Ad data only</td></tr><tr style="--i:2"><td class="acct">Ortho Excellence</td><td class="mv mv-mg">$300</td><td>Google: 14 booked, 9 started at $355 each. Meta: 2 booked, none showed ($704). Google missed 32% for budget.</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:3"><td class="acct">WOW Monterey</td><td class="mv mv-mg">$350</td><td>$291 per booked consult on Google vs $875 on Meta. Staged: second step after 14 days if lead cost holds.</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:4"><td class="acct">WOW Watsonville</td><td class="mv mv-mg">$300</td><td>A booked consult costs $518 on Google vs $907 on Meta. Fix PMax assets before adding to PMax.</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:5"><td class="acct">Dahar</td><td class="mv mv-mg">$150</td><td>Google booked 5 consults ($882 each); Meta&#x27;s lead campaign booked 1 of 33. Two traffic campaigns spent $1,054 for no leads.</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:6"><td class="acct">Farrow</td><td class="mv mv-mg">$150</td><td>Google: 113 leads at $37, but 87% of searches missed for budget. Meta cost per lead rose $18 → $27 → $66.</td><td class="ev ev-a">Ad data only</td></tr><tr style="--i:7"><td class="acct">Northeastern Braces</td><td class="mv mv-mg">$200</td><td>Google lead cost fell $56 → $34; Newburgh runs out of budget at about $21 a lead. Meta ads are seen 4.5 times per person.</td><td class="ev ev-p">Partial data</td></tr><tr style="--i:8"><td class="acct">Spring Hill Smiles</td><td class="mv mv-mg">$300</td><td>Google lead cost fell $140 → $65 and missed 48% for budget; Meta costs $97 a lead and 26 of 31 leads were unreachable.</td><td class="ev ev-a">Ad data only</td></tr><tr style="--i:9"><td class="acct">Super Kiddos</td><td class="mv mv-mg">$200</td><td>Google leads cost $64 vs $116 on Meta, and Search is limited by budget. Fix follow-up: 39 of 45 leads couldn&#x27;t connect.</td><td class="ev ev-a">Ad data only</td></tr><tr class="tot" style="--i:10"><td class="acct">Total</td><td class="mv mv-mg">$2,850</td><td></td><td></td></tr></tbody></table></div><div class="key"><span><i class="ev ev-b"></i>Booked data: SmileHub bookings</span><span><i class="ev ev-a"></i>Ad data only: Google and Meta results</span><span><i class="ev ev-p"></i>Partial data: shared form</span></div><p class="note">Moves = monthly budget leaving Meta and added to Google. Northeastern: Google and Meta share one landing-page form, so Meta bookings can't be separated.</p></figure>
+</section>
+
+<section class="part" id="g2m">
+  <h2>Google → Meta: $1,200 across four accounts</h2>
+  <p class="standfirst">Meta books consults for less in all four; Egger's gap comes from only two bookings each.</p>
+  <figure class="tbl " style="margin-left:0;margin-right:0"><p class="cap"><strong>Table 3.</strong> Budget moved from Google to Meta, by account.</p><div class="scroll"><table><colgroup><col style="width:17%"><col style="width:10%"><col style="width:57%"><col style="width:16%"></colgroup><thead><tr><th>Account</th><th>Moves</th><th>Why</th><th>Evidence</th></tr></thead><tbody><tr style="--i:0"><td class="acct">Walton</td><td class="mv mv-gm">$300</td><td>Meta books a consult at $344 vs $744 on Google, and its leads book twice as often (14% vs 7%). Google is held back by rank, not budget.</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:1"><td class="acct">Smile Solutions</td><td class="mv mv-gm">$300</td><td>Booked consult $219 on Meta vs $368 on Google, and Meta spends its full budget. Track cost per start too (Google 7, Meta 2).</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:2"><td class="acct">WOW Ukiah</td><td class="mv mv-gm">$300</td><td>Booked consult $691 on Meta vs $2,060 on Google (Jul–Aug). Staged: Google held 30 days, Meta raised once delivery is confirmed.</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:3"><td class="acct">Egger</td><td class="mv mv-gm">$300</td><td>Meta $594 per booking vs Google $1,329, but only 2 bookings each. On Google, 4% of clicks become leads.</td><td class="ev ev-b">Booked data</td></tr><tr class="tot" style="--i:4"><td class="acct">Total</td><td class="mv mv-gm">$1,200</td><td></td><td></td></tr></tbody></table></div><p class="note">Moves = monthly budget leaving Google and added to Meta. Ukiah uses Jul–Aug because September Meta leads are not in the SmileHub data.</p></figure>
+</section>
+
+<section class="part" id="trim">
+  <h2>Trims: $850 released across three accounts</h2>
+  <p class="standfirst">Money comes out where a platform stopped producing, and none of it is added elsewhere.</p>
+  <figure class="tbl " style="margin-left:0;margin-right:0"><p class="cap"><strong>Table 4.</strong> Budget released, by account.</p><div class="scroll"><table><colgroup><col style="width:17%"><col style="width:17%"><col style="width:50%"><col style="width:16%"></colgroup><thead><tr><th>Account</th><th>Change</th><th>Why</th><th>Evidence</th></tr></thead><tbody><tr style="--i:0"><td class="acct">WOW Santa Rosa</td><td class="mv mv-trim">Meta −$400</td><td>A booked consult costs $493 on Google vs $1,196 on Meta. Google stays at $3,400; Search is re-weighted inside it.</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:1"><td class="acct">Bernstein Windsor</td><td class="mv mv-trim">Meta −$300, Google +$100</td><td>Meta leads fell 25 → 8 → 1 a month on the same spend. Rebuild the ads; under 10 leads in 30 days, move it to Santa Rosa.</td><td class="ev ev-b">Booked data</td></tr><tr style="--i:2"><td class="acct">WOW Napa</td><td class="mv mv-trim">Google −$125, Meta −$125</td><td>Weakest WOW location: 8 bookings for $9,240 of spend. Meta is cheaper like for like, so both are trimmed.</td><td class="ev ev-b">Booked data</td></tr><tr class="tot" style="--i:3"><td class="acct">Total</td><td class="mv mv-trim">−$850 net</td><td></td><td></td></tr></tbody></table></div><p class="note">Wisdom Tooth Central (listed under fix first) is also cut from $1,500 to a $375 trial. It has been off since 10 Sep, so the $1,125 saves nothing in practice. Napa uses Jul–Aug for Meta because September Meta leads are not in the SmileHub data.</p></figure>
+</section>
+
+<section class="part" id="fix">
+  <h2>12 accounts fix first</h2>
+  <p class="standfirst">Nothing moves in these accounts until the issue listed for each is resolved.</p>
+  <div class="cols3"><div style="--i:0"><h3>Confirm before moving money<small>4</small></h3><ul><li><b>Crown</b>Meta books at $436 vs $1,528 on Google; confirm what drives the gap first.</li><li><b>South Florida</b>Sep cost per lead $1,004; SmileHub idle since June.</li><li><b>Renton</b>2% of clicks become leads; review the landing page.</li><li><b>Bernstein Santa Rosa</b>Only 7 of 16 Google bookings came via the landing page; confirm before shifting.</li></ul></div><div style="--i:1"><h3>Leads not being worked<small>5</small></h3><ul><li><b>Carroll</b>108 of 176 leads never contacted.</li><li><b>Smiles</b>61 of 112 leads untouched.</li><li><b>ARK</b>8 booked of 88 Google leads; 262 imported records.</li><li><b>Ortho Mike</b>Only 9 of 190 Meta leads booked.</li><li><b>Cartier</b>Meta books 9 of 23, but only 1 showed.</li></ul></div><div style="--i:2"><h3>Ads, rank and spend<small>3</small></h3><ul><li><b>House of Orthodontia</b>87% of searches lost to ad rank, not budget.</li><li><b>OESmiles</b>Meta spent $1,484 on a $600 budget in Sep; cap at $600.</li><li><b>Wisdom Tooth Central</b>Paused since 10 Sep; restart as a $375 trial.</li></ul></div></div>
+  <p class="note">Unworked leads make every channel look bad, so they are fixed before any budget decision.</p>
+</section>
+
+<section class="part" id="hold">
+  <h2>26 accounts hold</h2>
+  <p class="standfirst">Budget is not the problem, or there is too little data to judge.</p>
+  <figure class="tbl " style="margin-left:0;margin-right:0"><p class="cap"><strong>Table 5.</strong> Held accounts, grouped by reason.</p><div class="scroll"><table><colgroup><col style="width:22%"><col style="width:44%"><col style="width:34%"></colgroup><thead><tr><th>Reason</th><th>Accounts</th><th>Why we hold</th></tr></thead><tbody><tr style="--i:0"><td class="acct">Working or no clear gap (6)</td><td>Goodman, Palm Coast, Phoenixville, WOW Pittsburg, WOW Soledad, Invisbraces (Nikaeen)</td><td>Working, or no clear gap between platforms, so no case to move money.</td></tr><tr style="--i:1"><td class="acct">Limited by rank or approvals (3)</td><td>Pacific Northwest Ortho, Innova Dental Care, WOW Vallejo</td><td>Rank, ad quality or disapproved ads limit them, not budget.</td></tr><tr style="--i:2"><td class="acct">Too early to judge (6)</td><td>Unbraced, Green Valley, Webb Pediatric, Auburn, Killingly, Bonney Lake</td><td>Started, rebuilt or too few leads. Recheck after 30 days.</td></tr><tr style="--i:3"><td class="acct">More data needed (7)</td><td>Holt, Hilton Diminick, Sterling, WOW Salinas, Ortho Inc., OrthoDental Inc. (Gallup), Smiles By Lorino</td><td>No SmileHub booking data yet, a shared form or a paused account.</td></tr><tr style="--i:4"><td class="acct">Single platform (4)</td><td>Dr. E, Monmouth Ocean, Princeton Ortho, West Windsor</td><td>Only one platform runs, so there is no Google vs Meta comparison.</td></tr></tbody></table></div><p class="note">Hilton Diminick: decide a +$300 Google request at 30 days once SmileHub data is in.</p></figure>
+</section>
+
+<section class="part" id="new">
+  <h2>New money is a separate decision</h2>
+  <p class="standfirst">These requests are not part of the reallocation. Table 6 has the five with the clearest case; Table 7 has the four that need a fix or a check first.</p>
+  <figure class="tbl " style="margin-left:0;margin-right:0"><p class="cap"><strong>Table 6.</strong> Clearest case: booking data or a clean cost-per-lead signal. +$2,460 a month in total.</p><div class="scroll"><table><colgroup><col style="width:18%"><col style="width:11%"><col style="width:40%"><col style="width:31%"></colgroup><thead><tr><th>Account</th><th>Extra a month</th><th>Why</th><th>Before adding</th></tr></thead><tbody><tr style="--i:0"><td class="acct">Hanson Place</td><td class="mv mv-new">+$500</td><td>105 Google leads → 16 booked, 6 started ($329 each); 70% of searches missed for budget.</td><td>Fix the disapproved Exact and Phrase ads first.</td></tr><tr style="--i:1"><td class="acct">Goldkind</td><td class="mv mv-new">+$460</td><td>8 bookings at $344 each; 15% of searches missed for budget; Invisalign search $63 a lead.</td><td>Account was just rebuilt: recheck after 30 days.</td></tr><tr style="--i:2"><td class="acct">Halabi</td><td class="mv mv-new">+$500</td><td>72% of searches missed for budget at $39 a lead; no SmileHub data yet.</td><td>Keep the extra only if cost per lead holds at 30 days.</td></tr><tr style="--i:3"><td class="acct">Palo Alto</td><td class="mv mv-new">+$500</td><td>68% of searches missed for budget at $54 a lead; no SmileHub data yet.</td><td>Keep the extra only if cost per lead holds at 30 days.</td></tr><tr style="--i:4"><td class="acct">Dentistry at Marysville</td><td class="mv mv-new">+$500</td><td>66% missed for budget at $82 a lead (New Patient Specials: 78%, $98 a lead).</td><td>Add to New Patient Specials only; Emergency is volume-limited.</td></tr></tbody></table></div><p class="note">Extra a month = new budget minus current budget. Hanson Place and Goldkind are backed by bookings; the other three rest on ad data.</p></figure>
+  <figure class="tbl " style="margin-left:0;margin-right:0"><p class="cap"><strong>Table 7.</strong> Weaker case: the evidence is thin or points the other way. +$2,800 a month in total.</p><div class="scroll"><table><colgroup><col style="width:18%"><col style="width:11%"><col style="width:40%"><col style="width:31%"></colgroup><thead><tr><th>Account</th><th>Extra a month</th><th>Why</th><th>Before adding</th></tr></thead><tbody><tr style="--i:0"><td class="acct">Eagle Rock</td><td class="mv mv-new">+$1,220</td><td>60% missed for budget at $94 a lead; no SmileHub data yet.</td><td>Add to Broad search; PMax only once its assets are fixed.</td></tr><tr style="--i:1"><td class="acct">Carvalho &amp; Roth</td><td class="mv mv-new">+$400</td><td>52% missed for budget at $138 a lead, yet Sep spend was already ~$1,600 on a $37 budget.</td><td>Confirm the amount; remove the ended $70-a-day trial.</td></tr><tr style="--i:2"><td class="acct">Hudson Valley</td><td class="mv mv-new">+$570</td><td>Google costs $473 a lead vs $17 on Meta; New Patient Special: 0 leads from $851.</td><td>Fix the landing page; merge New Patient into Emergency.</td></tr><tr style="--i:3"><td class="acct">Elite Refrigeration</td><td class="mv mv-new">+$610</td><td>Not a dental practice; Refrigeration search missed 60% for budget but had 0 leads in Sep.</td><td>Fix HVAC ads and landing page first; confirm the amount.</td></tr></tbody></table></div><p class="note">Eagle Rock's $600 shift from Meta is part of the reallocation; only the extra $1,220 is new money.</p></figure>
+</section>
+
+<section class="part" id="expect">
+  <h2>What we expect</h2>
+  <p class="standfirst">The only estimated numbers in this document, and an upper end.</p>
+  <figure class="tbl " style="margin-left:0;margin-right:0"><p class="cap"><strong>Table 8.</strong> Estimated change per month after the moves and requests.</p><div class="scroll"><table><colgroup><col style="width:34%"><col style="width:22%"><col style="width:22%"><col style="width:22%"></colgroup><thead><tr><th>Account group</th><th class="num">Google leads</th><th class="num">Meta leads</th><th class="num">Booked consults</th></tr></thead><tbody><tr style="--i:0"><td class="acct">Malik (7 accounts)</td><td class="num">+31</td><td class="num">−4</td><td class="num">+1.2</td></tr><tr style="--i:1"><td class="acct">Ankit (12 accounts)</td><td class="num">+47</td><td class="num">+21</td><td class="num">+6.3</td></tr><tr style="--i:2"><td class="acct">Kapil (6 accounts)</td><td class="num">+34</td><td class="num">−2</td><td class="num">+2.2</td></tr><tr class="tot" style="--i:3"><td class="acct">Total (25 accounts)</td><td class="num">+112</td><td class="num">+15</td><td class="num">about +10</td></tr></tbody></table></div></figure>
+  <ul class="notes">
+    <li>Estimate = change in spend ÷ the higher of the 90-day and September cost per lead. Extra budget usually buys leads at a higher cost, so read these as the upper end.</li>
+    <li>Booked consults are estimated only where SmileHub prices a booking (14 accounts). Some of the gain is spend rising to budget where September spend was below it.</li>
+    <li>Oct–Dec searches run lower than Jul–Sep, so judge each move on cost per booked consult, not lead volume. Figures include the new-money requests.</li>
+  </ul>
+</section>
+
+<footer>Google &amp; Meta budget reallocation, Ortho Marketing, October 2026. Figures come from the Malik, Ankit and Kapil account reviews.</footer>
+</main>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* ---------- scroll progress, rail fill, parallax ---------- */
+  var bar = $('#progress'), fill = $('.rail .fill'), heroFig = $('.hero .flow'), heroTxt = $('.hero h1'), ticking = false;
+  function onScroll() {
+    var de = document.documentElement, y = window.pageYOffset || de.scrollTop;
+    var max = de.scrollHeight - window.innerHeight, p = max > 0 ? Math.min(1, y / max) : 0;
+    if (bar) bar.style.transform = 'scaleX(' + p + ')';
+    if (fill) fill.style.transform = 'scaleY(' + p + ')';
+    if (!reduce) {
+      document.body.style.setProperty('--sy', Math.round(y));
+      if (y < window.innerHeight * 1.2) {
+        if (heroFig) heroFig.style.transform = 'translate3d(0,' + (y * 0.1).toFixed(1) + 'px,0)';
+        if (heroTxt) heroTxt.style.transform = 'translate3d(0,' + (y * -0.06).toFixed(1) + 'px,0)';
+      }
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  /* ---------- count-up ---------- */
+  function fmt(el, v) {
+    var dec = +(el.getAttribute('data-dec') || 0);
+    return (el.getAttribute('data-pre') || '') + v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + (el.getAttribute('data-suf') || '');
+  }
+  function countUp(el, delay) {
+    var to = +el.getAttribute('data-to');
+    if (reduce) { el.textContent = fmt(el, to); return; }
+    var dur = 1500, t0 = null;
+    setTimeout(function () {
+      requestAnimationFrame(function step(t) {
+        if (t0 === null) t0 = t;
+        var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+        el.textContent = fmt(el, to * e);
+        if (k < 1) requestAnimationFrame(step); else el.textContent = fmt(el, to);
+      });
+    }, delay || 0);
+  }
+  var nums = $$('.num[data-to]');
+  if (!reduce) nums.forEach(function (n) { n.textContent = fmt(n, 0); });
+  // hero figures count up with the page-load sequence
+  $$('.flow .num[data-to]').forEach(function (n) { countUp(n, 2100); });
+
+  /* ---------- reveal on scroll ---------- */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target; el.classList.add('in'); io.unobserve(el);
+      $$('.num[data-to]', el).forEach(function (n) { if (!n.closest('.flow')) countUp(n, 150); });
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' }) : null;
+  $$('.part, .tbl, .tiles, .stack, .readouts, .cols3').forEach(function (el) {
+    if (io) io.observe(el); else el.classList.add('in');
+  });
+  if (!io) nums.forEach(function (n) { n.textContent = fmt(n, +n.getAttribute('data-to')); });
+
+  /* ---------- section rail ---------- */
+  var links = $$('.rail a'), secs = links.map(function (a) { return $(a.getAttribute('href')); });
+  if ('IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + en.target.id ? 'true' : 'false'); });
+      });
+    }, { rootMargin: '-30% 0px -62% 0px' });
+    secs.forEach(function (s) { if (s) so.observe(s); });
+  }
+
+  /* ---------- Fig. 2 filter ---------- */
+  var legend = $('.legend'), tiles = $$('.tile');
+  function applyFilter(k) { tiles.forEach(function (t) { t.classList.toggle('dim', !!k && t.getAttribute('data-k') !== k); }); }
+  if (legend) {
+    var pinned = null;
+    legend.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      var k = b.getAttribute('data-k'); pinned = (pinned === k) ? null : k;
+      $$('button', legend).forEach(function (x) { x.setAttribute('aria-pressed', String(x.getAttribute('data-k') === pinned)); });
+      applyFilter(pinned);
+    });
+    legend.addEventListener('mouseover', function (e) { var b = e.target.closest('button'); if (b && !pinned) applyFilter(b.getAttribute('data-k')); });
+    legend.addEventListener('mouseleave', function () { if (!pinned) applyFilter(null); });
+    legend.addEventListener('focusin', function (e) { var b = e.target.closest('button'); if (b && !pinned) applyFilter(b.getAttribute('data-k')); });
+    legend.addEventListener('focusout', function () { if (!pinned) applyFilter(null); });
+  }
+
+  /* ---------- Fig. 1 flow: particle density is proportional to dollars ---------- */
+  var cv = $('#flowCv');
+  if (cv && cv.getContext) {
+    var ctx = cv.getContext('2d'), W = 1000, H = 340;
+    var top = { a: [134, 150], c: [500, -40], b: [866, 150] }, bot = { a: [866, 190], c: [500, 380], b: [134, 190] };
+    var UNIT = 50;                          // one particle = $50 a month
+    function mk(n, path, col, sp) {
+      var arr = [];
+      for (var i = 0; i < n; i++) arr.push({ t: (i + Math.random()) / n, s: sp * (0.75 + Math.random() * 0.5), p: path, col: col, r: 2.1 + Math.random() * 1.5, j: (Math.random() - 0.5) * 14 });
+      return arr;
+    }
+    var parts = mk(Math.round(2850 / UNIT), top, '31,90,158', 0.0016).concat(mk(Math.round(1200 / UNIT), bot, '168,80,15', 0.0016));
+    var scale = 1, running = true, raf = 0;
+    function size() {
+      var r = cv.getBoundingClientRect(), d = Math.min(window.devicePixelRatio || 1, 2);
+      cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d);
+      scale = r.width / W * d;
+    }
+    function pt(p, t) {
+      var a = (1 - t) * (1 - t), b = 2 * (1 - t) * t, c = t * t;
+      return [a * p.a[0] + b * p.c[0] + c * p.b[0], a * p.a[1] + b * p.c[1] + c * p.b[1]];
+    }
+    function draw() {
+      ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.setTransform(scale, 0, 0, scale, 0, 0);
+      for (var i = 0; i < parts.length; i++) {
+        var q = parts[i], xy = pt(q.p, q.t), fade = Math.pow(Math.sin(Math.PI * q.t), 0.7), jy = q.j * Math.sin(Math.PI * q.t);
+        ctx.beginPath(); ctx.fillStyle = 'rgba(' + q.col + ',' + (0.15 + 0.85 * fade).toFixed(3) + ')';
+        ctx.arc(xy[0], xy[1] + jy, q.r, 0, 6.2832); ctx.fill();
+      }
+    }
+    function tick() {
+      if (!running) return;
+      for (var i = 0; i < parts.length; i++) { parts[i].t += parts[i].s; if (parts[i].t > 1) parts[i].t -= 1; }
+      draw(); raf = requestAnimationFrame(tick);
+    }
+    size(); draw();
+    window.addEventListener('resize', function () { size(); draw(); });
+    if (!reduce) {
+      raf = requestAnimationFrame(tick);
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) {
+          running = es[0].isIntersecting;
+          if (running) { cancelAnimationFrame(raf); raf = requestAnimationFrame(tick); }
+        }, { threshold: 0 }).observe(cv);
+      }
+    }
+  }
+})();
+
+</script>
+</body>
+</html>
